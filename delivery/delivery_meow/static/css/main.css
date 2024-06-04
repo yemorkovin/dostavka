@@ -82,3 +82,15 @@ button {
 .conteiner h1{
     text-align: center;
 }
+button{
+    transition: all .5s;
+}
+button:hover{
+
+}
+.bl_location{
+    width: 100%
+}
+.address_txt, .description{
+    width: 400px
+}

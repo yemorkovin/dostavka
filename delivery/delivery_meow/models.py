@@ -22,10 +22,13 @@ class User(models.Model):
 class Order(models.Model):
     description = models.TextField(verbose_name='Описание заказа')
     client = models.ForeignKey(User, on_delete=models.CASCADE, related_name='client')
-    courier = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='courier')
+    courier = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='courier', blank=True)
     datetime = models.DateTimeField()
     date_create = models.DateTimeField(auto_now=True)
     address = models.TextField()
+    lat = models.CharField(max_length=200, null=True, blank=True)
+    lon = models.CharField(max_length=200, null=True, blank=True)
+    status = models.CharField(max_length=200, default='Ожидает курьера')
 
 
 class Review(models.Model):
